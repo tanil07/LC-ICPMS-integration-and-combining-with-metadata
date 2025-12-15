@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri Nov  8 12:25:01 2024
-
 @author: Chemistry/Anil Timilsina
 """
+#change filename for metadata
+#change filename for quantitative data
+#Make sure  data column names on metadata and quantitative metadata match
+#change 'end_time' to 'stop_time' if necessary based on your LC-ICPMD data integration code
+
 import pandas as pd
 import numpy as np
 import re
@@ -115,4 +119,5 @@ for df in results[1:]:
     combined_df = pd.concat([combined_df, df[columns_to_add]], axis=1)
 
 current_time = datetime.now().strftime("%Y%m%d_%H%M%S")    
+
 combined_df.to_csv(f'{current_time}_ODV_list.csv')
